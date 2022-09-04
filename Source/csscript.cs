@@ -1,4 +1,4 @@
-#region Licence...
+﻿#region Licence...
 
 //-----------------------------------------------------------------------------
 // Date:	17/10/04	Time: 2:33p
@@ -1521,6 +1521,13 @@ namespace csscript
 
                         if (!File.Exists(location) || location.Contains("mscorlib"))
                             continue;
+
+                        // CuiLiang 动态生成的assembly，不要再加入到引用库中，避免AssemblyName冲突。
+                        // ref: https://github.com/cuiliang/qk-issues/issues/516
+                        if (asm.FullName.Contains(".tmp"))
+                        {
+                            continue;
+                        }
 
                         requestedRefAsms.AddAssembly(location);
                     }

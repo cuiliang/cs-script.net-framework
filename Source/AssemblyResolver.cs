@@ -325,8 +325,9 @@ namespace CSScriptLibrary
                         asmName = asmEnum.GetNextAssembly();
                         
                         if (asmName != null 
-						    && (Environment.Is64BitProcess && asmName.Contains("processorArchitecture=x86"))
+						    && ((Environment.Is64BitProcess && asmName.Contains("processorArchitecture=x86"))
 							|| (!Environment.Is64BitProcess && asmName.Contains("processorArchitecture=x64")))
+                            )
 						    continue;
                                          
                         
