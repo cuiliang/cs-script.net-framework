@@ -1775,7 +1775,13 @@ namespace CSScriptLibrary
                                 dynamicScriptsAssemblies.Add(scriptTextCRC, location);
                         }
                     }
+
                     return asm;
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                    throw;
                 }
                 finally
                 {
@@ -1903,7 +1909,8 @@ namespace CSScriptLibrary
                         int start = Environment.TickCount;
                         //Infinite timeout is not good choice here as it may block forever but continuing while the file is still locked will
                         //throw a nice informative exception.
-                        fileLock.WaitOne(5000, false); //let other thread/process (if any) to finish loading/compiling the same file; 2 seconds should be enough, if you need more use more sophisticated synchronization
+                        fileLock.WaitOne(5000,
+                            false); //let other thread/process (if any) to finish loading/compiling the same file; 2 seconds should be enough, if you need more use more sophisticated synchronization
 
                         //Trace.WriteLine(">>>  Waited  " + (Environment.TickCount - start));
 
@@ -1921,10 +1928,12 @@ namespace CSScriptLibrary
                                 dir = Path.GetDirectoryName(file);
                                 if (!string.IsNullOrEmpty(dir))
                                 {
-                                    CSExecutor.options.AddSearchDir(dir, Settings.code_dirs_section); //settings used by Compiler
+                                    CSExecutor.options.AddSearchDir(dir,
+                                        Settings.code_dirs_section); //settings used by Compiler
                                     CSScript.GlobalSettings.AddSearchDir(dir); //settings used by AsmHelper
                                 }
                             }
+
                             CSExecutor.options.refAssemblies = refAssemblies;
                         }
 
@@ -1965,9 +1974,16 @@ namespace CSScriptLibrary
                             if (retval != null)
                                 scriptCache.Add(new LoadedScript(scriptFile, retval));
 
-                            RemoteExecutor.SetScriptReflection(retval, outputFile, CSScript.EnableScriptLocationReflection);
+                            RemoteExecutor.SetScriptReflection(retval, outputFile,
+                                CSScript.EnableScriptLocationReflection);
                         }
+
                         return retval;
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine(ex.Message);
+                        throw;
                     }
                     finally
                     {
