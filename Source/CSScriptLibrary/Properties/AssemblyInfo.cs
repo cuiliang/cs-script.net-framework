@@ -60,6 +60,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDelaySign(false)]
 //[assembly: AssemblyKeyFile("")]
 #if !CSSLib_BuildUnsigned
-[assembly: AssemblyKeyFile("..\\..\\sgKey.snk")]
+//[assembly: AssemblyKeyFile("..\\..\\sgKey.snk")]
 #endif
 [assembly: AssemblyKeyName("")]

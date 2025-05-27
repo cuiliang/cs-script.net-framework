@@ -1,34 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>9.0.21022</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F33DDB9A-918F-43D9-A1CF-CECD269AD958}</ProjectGuid>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>
-    </ApplicationIcon>
-    <AssemblyKeyContainerName>
-    </AssemblyKeyContainerName>
-    <AssemblyName>CSScriptLibrary</AssemblyName>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyKeyContainerName></AssemblyKeyContainerName>
+    <AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>Library</OutputType>
-    <RootNamespace>CSScriptLibrary</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <StartupObject>
-    </StartupObject>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+	  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <StartupObject></StartupObject>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -44,54 +27,35 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Configurations>Debug;DebugAllowDemoSync;DebugCustomFile;DebugLocalServer;DebugUiAccess;Release</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug\</OutputPath>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <BaseAddress>285212672</BaseAddress>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
-    <ConfigurationOverrideFile>
-    </ConfigurationOverrideFile>
+    <ConfigurationOverrideFile></ConfigurationOverrideFile>
     <DefineConstants>TRACE;DEBUG;net4;net45;InterfaceAssembly</DefineConstants>
     <DocumentationFile>csscriptlibrary.xml</DocumentationFile>
-    <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
     <NoWarn>1699, 618</NoWarn>
-    <Optimize>false</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
-    <DebugType>full</DebugType>
-    <ErrorReport>prompt</ErrorReport>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>bin\Release\</OutputPath>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <BaseAddress>285212672</BaseAddress>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
-    <ConfigurationOverrideFile>
-    </ConfigurationOverrideFile>
+    <ConfigurationOverrideFile></ConfigurationOverrideFile>
     <DefineConstants>TRACE;net4;net45;InterfaceAssembly</DefineConstants>
     <DocumentationFile>CSScriptLibrary.xml</DocumentationFile>
-    <DebugSymbols>false</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
     <NoWarn>618</NoWarn>
-    <Optimize>true</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
     <DebugType>none</DebugType>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeAnalysis">
@@ -114,110 +78,90 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Mono.Posix.dll</HintPath>
     </Reference>
-    <Reference Include="System">
+    <Reference Update="System">
       <Name>System</Name>
     </Reference>
     <Reference Include="System.Collections.Immutable, Version=1.1.37.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Roslyn.Scripting\System.Collections.Immutable.dll</HintPath>
     </Reference>
-    <Reference Include="System.Core">
+    <Reference Update="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Data">
+    <Reference Update="System.Data">
       <Name>System.Data</Name>
     </Reference>
-    <Reference Include="System.Drawing" />
     <Reference Include="System.IO.FileSystem">
       <HintPath>..\Roslyn.Scripting\System.IO.FileSystem.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.FileSystem.Primitives">
       <HintPath>..\Roslyn.Scripting\System.IO.FileSystem.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml">
+    <Reference Update="System.Xml">
       <Name>System.XML</Name>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\AssemblyExecutor.cs">
-      <Link>AssemblyExecutor.cs</Link>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="..\AssemblyResolver.cs">
-      <Link>AssemblyResolver.cs</Link>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="..\csparser.cs">
-      <Link>csparser.cs</Link>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="..\csscript.cs">
-      <Link>csscript.cs</Link>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="..\Exceptions.cs">
-      <Link>Exceptions.cs</Link>
-    </Compile>
-    <Compile Include="..\ExecuteOptions.cs">
-      <Link>ExecuteOptions.cs</Link>
-    </Compile>
-    <Compile Include="..\extensions.cs">
-      <Link>extensions.cs</Link>
-    </Compile>
-    <Compile Include="..\fileparser.cs">
-      <Link>fileparser.cs</Link>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="..\GACHelper.cs">
-      <Link>GACHelper.cs</Link>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="..\HelpProvider.cs">
-      <Link>HelpProvider.cs</Link>
-    </Compile>
-    <Compile Include="..\NuGet.cs">
-      <Link>NuGet.cs</Link>
-    </Compile>
-    <Compile Include="..\Precompiler.cs">
-      <Link>Precompiler.cs</Link>
-    </Compile>
-    <Compile Include="..\Project.cs">
-      <Link>Project.cs</Link>
-    </Compile>
-    <Compile Include="..\ScriptLauncherBuilder.cs">
-      <Link>ScriptLauncherBuilder.cs</Link>
-    </Compile>
-    <Compile Include="..\Settings.cs">
-      <Link>Settings.cs</Link>
-    </Compile>
-    <Compile Include="..\SystemWideLock.cs">
-      <Link>SystemWideLock.cs</Link>
-    </Compile>
-    <Compile Include="..\Unix.FileMutex.cs">
-      <Link>Unix.FileMutex.cs</Link>
-    </Compile>
-    <Compile Include="..\Utils.cs">
-      <Link>Utils.cs</Link>
-    </Compile>
-    <Compile Include="AsmHelper.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="CSScriptLib.Eval.CodeDom.cs" />
-    <Compile Include="CSScriptLib.Eval.Roslyn.cs" />
-    <Compile Include="Evaluator.Extensions.Remote.cs" />
-    <Compile Include="Evaluator.Extensions.Async.cs" />
-    <Compile Include="IEvaluator.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Crc32.cs" />
-    <Compile Include="CSScriptLib.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="CSScriptLib.Eval.Mono.cs" />
-    <Compile Include="ObjectCaster.cs" />
+	  <Compile Include="..\AssemblyExecutor.cs">
+		  <Link>AssemblyExecutor.cs</Link>
+		  <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="..\AssemblyResolver.cs">
+		  <Link>AssemblyResolver.cs</Link>
+		  <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="..\csparser.cs">
+		  <Link>csparser.cs</Link>
+		  <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="..\csscript.cs">
+		  <Link>csscript.cs</Link>
+		  <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="..\Exceptions.cs">
+		  <Link>Exceptions.cs</Link>
+	  </Compile>
+	  <Compile Include="..\ExecuteOptions.cs">
+		  <Link>ExecuteOptions.cs</Link>
+	  </Compile>
+	  <Compile Include="..\extensions.cs">
+		  <Link>extensions.cs</Link>
+	  </Compile>
+	  <Compile Include="..\fileparser.cs">
+		  <Link>fileparser.cs</Link>
+		  <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="..\GACHelper.cs">
+		  <Link>GACHelper.cs</Link>
+		  <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Include="..\HelpProvider.cs">
+		  <Link>HelpProvider.cs</Link>
+	  </Compile>
+	  <Compile Include="..\NuGet.cs">
+		  <Link>NuGet.cs</Link>
+	  </Compile>
+	  <Compile Include="..\Precompiler.cs">
+		  <Link>Precompiler.cs</Link>
+	  </Compile>
+	  <Compile Include="..\Project.cs">
+		  <Link>Project.cs</Link>
+	  </Compile>
+	  <Compile Include="..\ScriptLauncherBuilder.cs">
+		  <Link>ScriptLauncherBuilder.cs</Link>
+	  </Compile>
+	  <Compile Include="..\Settings.cs">
+		  <Link>Settings.cs</Link>
+	  </Compile>
+	  <Compile Include="..\SystemWideLock.cs">
+		  <Link>SystemWideLock.cs</Link>
+	  </Compile>
+	  <Compile Include="..\Unix.FileMutex.cs">
+		  <Link>Unix.FileMutex.cs</Link>
+	  </Compile>
+	  <Compile Include="..\Utils.cs">
+		  <Link>Utils.cs</Link>
+	  </Compile>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -236,11 +180,5 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
+  <PropertyGroup />
 </Project>
