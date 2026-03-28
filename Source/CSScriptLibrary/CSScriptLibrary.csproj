@@ -30,6 +30,8 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
     <Configurations>Debug;DebugAllowDemoSync;DebugCustomFile;DebugLocalServer;DebugUiAccess;Release</Configurations>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+    <DefineConstants>$(DefineConstants);TRACE;net4;net45;InterfaceAssembly</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <BaseAddress>285212672</BaseAddress>
